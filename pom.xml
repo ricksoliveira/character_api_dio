@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>one.digital.innovation</groupId>
-	<artifactId>personapi</artifactId>
+	<artifactId>characterapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>personapi</name>
-	<description>Person API project</description>
+	<name>characterapi</name>
+	<description>Character API project</description>
 	<properties>
 		<java.version>16</java.version>
 	</properties>
