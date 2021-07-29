@@ -1,4 +1,4 @@
-package one.digital.innovation.characterapi.dto;
+package one.digital.innovation.characterapi.dto.response;
 
 import lombok.Builder;
 import lombok.Data;
