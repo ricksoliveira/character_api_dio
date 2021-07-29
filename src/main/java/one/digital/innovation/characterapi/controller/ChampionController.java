@@ -8,24 +8,24 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/champion")
+@RequestMapping("/api/v1/champion")
 public class ChampionController {
 
     ChampionService championService;
 
-//    @Autowired
-//    public ChampionController(ChampionService championService) {
-//        this.championService = championService;
-//    }
-
-//    @PostMapping
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public MessageResponseDTO createCharacter(@RequestBody Champion champion){
-//        return championService.createCharacter(champion);
-//    }
-
-    @GetMapping
-    public String test(){
-        return "test";
+    @Autowired
+    public ChampionController(ChampionService championService) {
+        this.championService = championService;
     }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public MessageResponseDTO createCharacter(@RequestBody Champion champion){
+        return championService.createCharacter(champion);
+    }
+
+//    @GetMapping
+//    public String textTest(){
+//        return "API TEST";
+//    }
 }
