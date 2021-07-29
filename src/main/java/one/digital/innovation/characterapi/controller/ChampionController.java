@@ -18,9 +18,14 @@ public class ChampionController {
         this.championService = championService;
     }
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public MessageResponseDTO createCharacter(@RequestBody Champion champion){
-        return championService.createCharacter(champion);
+//    @PostMapping
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public MessageResponseDTO createCharacter(@RequestBody Champion champion){
+//        return championService.createCharacter(champion);
+//    }
+
+    @GetMapping
+    public String test(){
+        return "test";
     }
 }
