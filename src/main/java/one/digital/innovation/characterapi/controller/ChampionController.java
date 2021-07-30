@@ -1,5 +1,6 @@
 package one.digital.innovation.characterapi.controller;
 
+import lombok.AllArgsConstructor;
 import one.digital.innovation.characterapi.dto.request.ChampionDTO;
 import one.digital.innovation.characterapi.dto.response.MessageResponseDTO;
 import one.digital.innovation.characterapi.exception.ChampionNotFoundException;
@@ -13,19 +14,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/champion")
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class ChampionController {
 
     ChampionService championService;
 
-    @Autowired
-    public ChampionController(ChampionService championService) {
-        this.championService = championService;
-    }
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public MessageResponseDTO createCharacter(@RequestBody @Valid ChampionDTO championDTO){
-        return championService.createCharacter(championDTO);
+    public MessageResponseDTO createChampion(@RequestBody @Valid ChampionDTO championDTO){
+        return championService.createChampion(championDTO);
     }
 
     @GetMapping
@@ -38,14 +35,14 @@ public class ChampionController {
         return championService.findChampionById(id);
     }
 
+    @PutMapping("/{id}")
+    public MessageResponseDTO updateChampionById(@PathVariable Long id, @RequestBody ChampionDTO championDTO) throws ChampionNotFoundException {
+        return championService.updateChampionById(id, championDTO);
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteChampion(@PathVariable Long id) throws ChampionNotFoundException {
         championService.deleteChampion(id);
     }
-
-//    @GetMapping
-//    public String textTest(){
-//        return "API TEST";
-//    }
 }

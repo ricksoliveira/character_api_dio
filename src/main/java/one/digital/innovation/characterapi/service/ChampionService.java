@@ -1,5 +1,6 @@
 package one.digital.innovation.characterapi.service;
 
+import lombok.AllArgsConstructor;
 import one.digital.innovation.characterapi.dto.request.ChampionDTO;
 import one.digital.innovation.characterapi.dto.response.MessageResponseDTO;
 import one.digital.innovation.characterapi.entity.Champion;
@@ -13,27 +14,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class ChampionService {
 
     private final ChampionMapper championMapper = ChampionMapper.INSTANCE;
     private ChampionRepository championRepository;
 
-    @Autowired
-    public ChampionService(ChampionRepository championRepository) {
-        this.championRepository = championRepository;
-    }
-
-    public Champion verifyExistence(Long id) throws ChampionNotFoundException {
-        return championRepository.findById(id).orElseThrow(() -> new ChampionNotFoundException(id));
-    }
-
-    public MessageResponseDTO createCharacter(ChampionDTO championDTO){
+    public MessageResponseDTO createChampion(ChampionDTO championDTO){
         Champion championToSave = championMapper.toModel(championDTO);
         Champion savedChampion = championRepository.save(championToSave);
-        return MessageResponseDTO
-                .builder()
-                .message("New Champion created successfully!" + " Name: " + savedChampion.getName())
-                .build();
+
+        return this.createMessageResponse(savedChampion.getId(), "Created new Champion with ID: ");
     }
 
     public List<ChampionDTO> listAllChampions() {
@@ -48,8 +39,29 @@ public class ChampionService {
         return championMapper.toDTO(champion);
     }
 
+    public MessageResponseDTO updateChampionById(Long id, ChampionDTO championDTO) throws ChampionNotFoundException {
+
+        this.verifyExistence(id);
+
+        Champion championToUpdate = championMapper.toModel(championDTO);
+        Champion updatedChampion = championRepository.save(championToUpdate);
+
+        return this.createMessageResponse(updatedChampion.getId(), "Updated Champion with ID: ");
+    }
+
     public void deleteChampion(Long id) throws ChampionNotFoundException {
-       this.verifyExistence(id);
+        this.verifyExistence(id);
         championRepository.deleteById(id);
     }
+
+    private Champion verifyExistence(Long id) throws ChampionNotFoundException {
+        return championRepository.findById(id).orElseThrow(() -> new ChampionNotFoundException(id));
+    }
+
+    private MessageResponseDTO createMessageResponse(Long id, String message) {
+        return MessageResponseDTO.builder()
+                .message(message + id)
+                .build();
+    }
+
 }
