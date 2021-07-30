@@ -61,7 +61,7 @@ As shown in the diagram above, each character (Champion), has a level, a name an
 >
 > ![image](https://user-images.githubusercontent.com/68413884/127720063-4bb13a04-9694-4a64-98c4-a98cc770c010.png)
 >
->      ```
+>      
 >      {
 >          "name": "Usernametest",
 >          "level": "1",
@@ -80,7 +80,7 @@ As shown in the diagram above, each character (Champion), has a level, a name an
 >              }
 >          ]
 >      }
->      ```
+>      
 >
 >    - The links for adding an **Skill** and a **Profession** are, respectively:
 >
