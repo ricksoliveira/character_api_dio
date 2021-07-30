@@ -92,7 +92,7 @@ Or you can just download it as a `ZIP` file and open as a project  within your I
 >      http://localhost:8080/api/v1/profession
 >      ```
 >
->    - The `charSpec` field can be one out of 5 possibilities:
+>    - The `charSpec` field can only be one out of 5 possibilities:
 >      - WARRIOR
 >      - PALADIN
 >      - MAGE
