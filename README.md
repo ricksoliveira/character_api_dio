@@ -23,7 +23,7 @@ As shown in the diagram above, each character (Champion), has a level, a name an
 > To install this project all you have to do is to clone this repository with the command:
 >
 > ```
-> git clone https://github.com/ricksoliveira/character_api_dio.git
+>    git clone https://github.com/ricksoliveira/character_api_dio.git
 > ```
 >
 > Or you can just download it as a `ZIP` file and open as a project  within your IDE.
@@ -39,7 +39,7 @@ As shown in the diagram above, each character (Champion), has a level, a name an
 >    - Alternatively you can run the project on the terminal with the command:
 >
 >      ```
->      mvn spring-boot:run 
+>         mvn spring-boot:run 
 >      ```
 
 
@@ -85,11 +85,11 @@ As shown in the diagram above, each character (Champion), has a level, a name an
 >    - The links for adding an **Skill** and a **Profession** are, respectively:
 >
 >      ```
->      http://localhost:8080/api/v1/skill
+>         http://localhost:8080/api/v1/skill
 >      ```
 >
 >      ```
->      http://localhost:8080/api/v1/profession
+>         http://localhost:8080/api/v1/profession
 >      ```
 >
 >    - The `charSpec` field can only be one out of 5 possibilities:
