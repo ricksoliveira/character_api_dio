@@ -23,7 +23,7 @@ As shown in the diagram above, each character (Champion), has a level, a name an
 > To install this project all you have to do is to clone this repository with the command:
 >
 > ```
-> 	git clone https://github.com/ricksoliveira/character_api_dio.git
+> git clone https://github.com/ricksoliveira/character_api_dio.git
 > ```
 >
 > Or you can just download it as a `ZIP` file and open as a project  within your IDE.
