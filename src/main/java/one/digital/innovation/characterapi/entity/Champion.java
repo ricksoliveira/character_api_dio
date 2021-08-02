@@ -9,6 +9,10 @@ import one.digital.innovation.characterapi.enums.Specialization;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * <p>This class represents a table of the database</p>
+ * <p>and its attributes are the tables columns.</p>
+ */
 @Entity
 @Data
 @Builder

@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/**
+ * <p>This class represents a table of the database</p>
+ * <p>and its attributes are the tables columns.</p>
+ */
 @Entity
 @Data
 @Builder
