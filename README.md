@@ -2,7 +2,7 @@
 
 ### What is `Character Creation API` ?
 
-This application is a `Java` API REST developed for a simple Character RPG like system creation using `Spring Boot` and the entity relationship diagram for the database is::
+This application is a `Java` API REST developed for a simple Character RPG like system creation using `Spring Boot` and the entity relationship diagram for the database is:
 
 ![characterAPI-MER](https://user-images.githubusercontent.com/68413884/127718454-6e6a57b1-0f14-4c3f-a52a-eb1a27e41d6f.png)
 
